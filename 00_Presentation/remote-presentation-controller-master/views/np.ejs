@@ -1,0 +1,217 @@
+<div class="reveal">
+
+	<!-- Used to fade in a background when a specific slide state is reached -->
+	<div class="state-background"></div>
+
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+
+		<section data-state="bluesmith">
+			<h1>node.js</h1>
+			<h3 class="inverted">A Primer</h3>
+			<script>
+				// Delicously hacky. Look away.
+				if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+			</script>
+
+			<p>
+				JavaScript is the only language that I’m aware of that people feel they don’t need to learn before they start using it.
+			</p>
+			<p>
+				<i><small>- <a href="http://javascript.crockford.com/">Douglas Crockford</a> </small></i>
+			</p>
+
+			<aside class="notes">
+				Welcome to Lunch n Learn in 2015.
+				Slightly glib, but valid. With advance of frameworks like jQuery we have become cushioned somewhat.
+			</aside>
+		</section>
+
+		<section data-state="bluesmith" data-transition="cube">
+			<h2>Agenda</h2>
+			<ul>
+				<li>History Lesson</li>
+				<li>node</li>
+				<li>npm</li>
+				<li>Demos</li>
+				<li>Questions</li>
+			</ul>
+		</section>
+
+		<section data-state="bluesmith">
+			<h2>History Lesson</h2>
+			<h2><img src="/images/undefined-is-not-a-function.png"></h2>
+		</section>
+
+		<section data-state="bluesmith">
+			<section>
+				<h2>History Lesson</h2>
+				<h3>Blur vs Oasis</h3>
+				<ul>
+					<li class="fragment">Mocha - LiveWire - LiveScript - JavaScript</li>
+					<li class="fragment">Written in ten days by Brendan Eich</li>
+					<li class="fragment">Pased to ECMA for standardisation (ECMAScript)</li>
+					<li class="fragment">Microsoft muscled in on the act with IE, added JScript</li>
+					<li class="fragment">Netscape plagued with problems</li>
+					<li class="fragment">ECMA 3</li>
+				</ul>
+
+				<aside class="notes">
+					Netscape Navigator 2.0 vs IE 3.0
+					European Computer Manufacturers Association (ECMA), other implementations like ActionScript
+				</aside>
+			</section>
+
+			<section>
+				<h2>History Lesson</h2>
+				<h3>Gareth Gates vs Will Young</h3>
+				<ul>
+					<li class="fragment">Mozilla (Gecko / SpiderMonkey)</li>
+					<li class="fragment">Microsoft went their own way</li>
+					<li class="fragment">Headache for developers</li>
+					<li class="fragment">ECMA 4 abandoned (politics)</li>
+				</ul>
+
+				<aside class="notes">
+					Gecko rendering engine and SpiderMonkey JavaScript engine.
+					Fourth Edition was abandoned, due to political differences concerning language complexity. Many features proposed for the Fourth Edition have been completely dropped; some are proposed for ECMAScript Harmony.
+				</aside>
+			</section>
+
+			<section>
+				<h2>History Lesson</h2>
+				<h3>Arctic Monkeys vs Kasabian</h3>
+				<ul>
+					<li class="fragment">Browser explosion</fragment>
+					<li class="fragment">Surge in popularity - ubiquitous</li>
+					<li class="fragment">Server side - Ajax</li>
+					<li class="fragment">jQuery</li>
+					<li class="fragment">ECMA 5.1</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>History Lesson</h2>
+				<h3>Royal Blood vs Bastille</h3>
+				<ul>
+					<li class="fragment">Server side</li>
+					<li class="fragment">HTML5</li>
+					<li class="fragment">node / npm</li>
+					<li class="fragment">ECMA 6</li>
+					<li class="fragment">ECMA 7</li>
+					<li class="fragment">All browsers running the same JavaScript?</li>
+				</ul>
+			</section>
+		</section>
+		
+		<!-- node slides section -->
+		<section data-state="bluesmith">
+			<section>
+				<h2><img src="/images/node-logo.png"></h2>
+				<ul>
+					<li>Uses Google's V8 JavaScript engine</li>
+					<li>Event driven, non blocking</li>
+					<li>Created by Ryan Dahl for Linux in 2009</li>
+					<li>Microsoft got in on the act in 2011</li>
+					<li>Single threaded</li>
+				</ul>
+				<aside class="notes">
+					Node.js operates on a single thread, using non-blocking I/O calls, allowing it to support tens of thousands of concurrent connections,
+					without worrying about the cost of context-switching between threads. The design of sharing a single-thread between all the requests
+					means it can be used to build highly concurrent applications. The design goal of a Node.js application is that any function performing I/O must use a callback.
+
+					A downside of this approach is that Node.js doesn't allow scaling with the number of CPU cores of the machine it is running on.
+				</aside>
+			</section>
+			<section>
+				<h2><img src="/images/node-logo.png"></h2>
+				<pre><code contenteditable>
+var http = require("http");
+var url = require("url");
+
+function start() {
+function onRequest(request, response) {
+	var pathname = url.parse(request.url).pathname;
+	console.log("Request for " + pathname + " received.");
+	response.writeHead(200, {"Content-Type": "text/plain"});
+	response.write("Hello World");
+	response.end();
+}
+
+http.createServer(onRequest).listen(8888);
+console.log("Server has started.");
+}
+
+exports.start = start;
+				</code></pre>
+			</section>
+			<section>
+				<h2><img src="/images/io-logo.png"></h2>
+				<ul>
+					<li>Fork of node</li>
+					<li>Tired of Joyent's corporate control</li>
+				</ul>
+				<aside class="notes">
+					Lack of open governance, no releases for a while - keeping on top of V8 releases.
+				</aside>
+			</section>
+		</section>
+
+		<!-- npm slides section -->
+		<section data-state="bluesmith">
+			<section>
+				<h2><img src="/images/npm-logo.svg"></h2>
+				<ul>
+					<li>https://www.npmjs.com/</li>
+					<li>Bundled with node</li>
+					<li>Command line driven</li>
+					<li>100K+ packages</li>
+					<li>40M package downloads a day</li>
+					<li>Upload your own packages</li>
+				</ul>
+			</section>
+			<section>
+				<h2><img src="/images/npm-logo.svg"></h2>
+				<pre><code contenteditable>
+npm install express --save
+
+npm uninstall --save express
+				</code></pre>
+
+				<pre><code contenteditable>
+{
+	"name": "application-name"
+	, "version": "0.0.1"
+	, "private": true
+	, "dependencies": {
+		"express": "2.5.8"
+		, "ejs": ">= 0.0.1"
+		, "socket.io" : ">= 0.9.6"
+	}
+}
+				</code></pre>
+			</section>
+		</section>
+
+		<section>
+			<h1>Demos</h1>
+		</section>
+
+		<section data-state="bluesmith">
+			<h1>The End</h1>
+			<h3 class="inverted">Questions?</h3>
+		</section>
+	</div>
+
+	<!-- The navigational controls UI -->
+	<aside class="controls">
+		<a class="left" href="#">&#x25C4;</a>
+		<a class="right" href="#">&#x25BA;</a>
+		<a class="up" href="#">&#x25B2;</a>
+		<a class="down" href="#">&#x25BC;</a>
+	</aside>
+
+	<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+	<div class="progress"><span></span></div>
+
+</div>
