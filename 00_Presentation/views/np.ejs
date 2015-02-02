@@ -61,40 +61,12 @@
 					European Computer Manufacturers Association (ECMA), other implementations like ActionScript
 				</aside>
 			</section>
-
-			<section>
-				<h2>History Lesson</h2>
-				<h3>Gareth Gates vs Will Young</h3>
-				<ul>
-					<li class="fragment">Mozilla (Gecko / SpiderMonkey)</li>
-					<li class="fragment">Microsoft went their own way</li>
-					<li class="fragment">Headache for developers</li>
-					<li class="fragment">ECMA 4 abandoned (politics)</li>
-				</ul>
-
-				<aside class="notes">
-					Gecko rendering engine and SpiderMonkey JavaScript engine.
-					Fourth Edition was abandoned, due to political differences concerning language complexity. Many features proposed for the Fourth Edition have been completely dropped; some are proposed for ECMAScript Harmony.
-				</aside>
-			</section>
-
-			<section>
-				<h2>History Lesson</h2>
-				<h3>Arctic Monkeys vs Kasabian</h3>
-				<ul>
-					<li class="fragment">Browser explosion</fragment>
-					<li class="fragment">Surge in popularity - ubiquitous</li>
-					<li class="fragment">Server side - Ajax</li>
-					<li class="fragment">jQuery</li>
-					<li class="fragment">ECMA 5.1</li>
-				</ul>
-			</section>
-
+			
 			<section>
 				<h2>History Lesson</h2>
 				<h3>Royal Blood vs Bastille</h3>
 				<ul>
-					<li class="fragment">Server side</li>
+					<li class="fragment">Ubiquitous / Server side</li>
 					<li class="fragment">HTML5</li>
 					<li class="fragment">node / npm</li>
 					<li class="fragment">ECMA 6</li>
@@ -111,7 +83,7 @@
 				<ul>
 					<li>Uses Google's V8 JavaScript engine</li>
 					<li>Event driven, non blocking</li>
-					<li>Created by Ryan Dahl for Linux in 2009</li>
+					<li>Created by Ryan Dahl @ Joyent for Linux in 2009</li>
 					<li>Microsoft got in on the act in 2011</li>
 					<li>Single threaded</li>
 				</ul>
@@ -123,28 +95,22 @@
 					A downside of this approach is that Node.js doesn't allow scaling with the number of CPU cores of the machine it is running on.
 				</aside>
 			</section>
+			
 			<section>
 				<h2><img src="/images/node-logo.png"></h2>
+				<h3>Event driven, non blocking (Argos)</h3>
 				<pre><code contenteditable>
-var http = require("http");
-var url = require("url");
-
-function start() {
-function onRequest(request, response) {
-	var pathname = url.parse(request.url).pathname;
-	console.log("Request for " + pathname + " received.");
-	response.writeHead(200, {"Content-Type": "text/plain"});
-	response.write("Hello World");
-	response.end();
-}
-
-http.createServer(onRequest).listen(8888);
-console.log("Server has started.");
-}
-
-exports.start = start;
+var result = database.query("SELECT * FROM hugetable");
+console.log("Hello World");
 				</code></pre>
-			</section>
+				<pre><code contenteditable>
+database.query("SELECT * FROM hugetable", function(rows) {
+  var result = rows;
+});
+console.log("Hello World");
+				</code></pre>
+			</section>			
+			
 			<section>
 				<h2><img src="/images/io-logo.png"></h2>
 				<ul>
@@ -195,6 +161,9 @@ npm uninstall --save express
 
 		<section>
 			<h1>Demos</h1>
+			<video autoplay loop>
+			<source src="/images/dancing-pint.mp4" type="video/mp4">
+			</video>			
 		</section>
 
 		<section data-state="bluesmith">

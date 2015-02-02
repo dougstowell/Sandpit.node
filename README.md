@@ -3,26 +3,28 @@ Learnings in node
 
 ## Set Up
 
-### Chocolatey
+http://nodejs.org/download/
 
-https://chocolatey.org/
-
-Run as Admin:
-
-@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+This installs npm too (C:\Program Files\nodejs)
 
 ## Hello World
 
-choco install nodejs
+Demonstrates modules and basic structure of a node program.
+
+    node index.js
+
+## Hello World Web
+
+    node server.js
+    
+    node serverCallback.js
+
+## Hello World Router
+
+    node server.js
 
 ## Node Package Manager
 
-choco install npm
 
-npm init
-
-npm i lodash --save
-
-npm uninstall lodash --save
 
 ## Express

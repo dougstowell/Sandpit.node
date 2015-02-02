@@ -1,0 +1,35 @@
+function getPrimes(max) {
+    var primes = [];
+    var sieve = new Array( max );
+    for( var i = 0;  i < max;  i++ ) {
+        sieve[i] = true;
+    }
+    for( var p = 2;  p < max;  p++ ) {
+        if( sieve[p] ) {
+            // p is prime, save it and mark p*2, p*3, etc. as non-prime
+            primes.push( p );
+            for( var t = p * 2;  t < max;  t += p ) {
+                sieve[t] = false;
+            }
+        }
+    }
+
+    return primes;
+}
+
+function getPrimesWithCallback(max, callback) {
+    callback(getPrimes(max));
+}
+
+function getLargestNumber(numOne, numTwo) {
+    return numOne > numTwo ? numOne : numTwo;
+}
+
+function getLargestNumberWithCallback(numOne, numTwo, callback) {
+    callback(getLargestNumber(numOne, numTwo));
+}
+
+exports.primes = getPrimes;
+exports.primesWithCallback = getPrimesWithCallback;
+exports.largestNumber = getLargestNumber;
+exports.largestNumberWithCallback = getLargestNumberWithCallback;
