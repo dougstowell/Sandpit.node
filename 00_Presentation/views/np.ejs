@@ -61,7 +61,7 @@
 					European Computer Manufacturers Association (ECMA), other implementations like ActionScript
 				</aside>
 			</section>
-			
+
 			<section>
 				<h2>History Lesson</h2>
 				<h3>Royal Blood vs Bastille</h3>
@@ -75,7 +75,7 @@
 				</ul>
 			</section>
 		</section>
-		
+
 		<!-- node slides section -->
 		<section data-state="bluesmith">
 			<section>
@@ -95,7 +95,7 @@
 					A downside of this approach is that Node.js doesn't allow scaling with the number of CPU cores of the machine it is running on.
 				</aside>
 			</section>
-			
+
 			<section>
 				<h2><img src="/images/node-logo.png"></h2>
 				<h3>Event driven, non blocking (Argos)</h3>
@@ -109,8 +109,25 @@ database.query("SELECT * FROM hugetable", function(rows) {
 });
 console.log("Hello World");
 				</code></pre>
-			</section>			
-			
+			</section>
+
+			<section>
+				<h2><img src="/images/node-logo.png"></h2>
+				<ul>
+					<li>Walmart</li>
+					<li>Linked In</li>
+					<li>eBay</li>
+					<li>Dow Jones</li>
+					<li>Yahoo!</li>
+					<li>PayPal</li>
+					<li>Github (Atom)</li>
+					<li>Azure</li>
+				</ul>
+				<aside class="notes">
+					Lack of open governance, no releases for a while - keeping on top of V8 releases.
+				</aside>
+			</section>
+
 			<section>
 				<h2><img src="/images/io-logo.png"></h2>
 				<ul>
@@ -134,25 +151,28 @@ console.log("Hello World");
 					<li>100K+ packages</li>
 					<li>40M package downloads a day</li>
 					<li>Upload your own packages</li>
+					<li>Global and local</li>
 				</ul>
 			</section>
 			<section>
 				<h2><img src="/images/npm-logo.svg"></h2>
 				<pre><code contenteditable>
+npm init
 npm install express --save
-
-npm uninstall --save express
+npm install sax@0.1.1
 				</code></pre>
 
 				<pre><code contenteditable>
+npm install
+
 {
-	"name": "application-name"
-	, "version": "0.0.1"
-	, "private": true
-	, "dependencies": {
-		"express": "2.5.8"
-		, "ejs": ">= 0.0.1"
-		, "socket.io" : ">= 0.9.6"
+	"name": "application-name",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "2.5.8",
+		"ejs": ">= 0.0.1",
+		"socket.io" : ">= 0.9.6"
 	}
 }
 				</code></pre>
@@ -163,7 +183,7 @@ npm uninstall --save express
 			<h1>Demos</h1>
 			<video autoplay loop>
 			<source src="/images/dancing-pint.mp4" type="video/mp4">
-			</video>			
+			</video>
 		</section>
 
 		<section data-state="bluesmith">
