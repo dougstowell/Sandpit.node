@@ -1,0 +1,2 @@
+C:\Repo\Sandpit.node\00_Presentation\obj\Debug\NodePres.njsprojResolveAssemblyReference.cache
+C:\Repo\Sandpit.node\00_Presentation\bin\Microsoft.NodejsTools.WebRole.dll

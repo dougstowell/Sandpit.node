@@ -41,4 +41,18 @@ Demonstrates how to create a package.json file, adds global and local modules.
 	
 
 
-## Express
+## Express and Express-Generator
+
+	npm init
+	npm install express --save
+	npm ls
+
+	npm install express-generator -g
+	express -h
+	express myapp
+	cd myapp
+	npm install
+
+	set DEBUG=myapp & node .\bin\www
+
+

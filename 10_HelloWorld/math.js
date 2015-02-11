@@ -21,15 +21,15 @@ function getPrimesWithCallback(max, callback) {
     callback(getPrimes(max));
 }
 
-function getLargestNumber(numOne, numTwo) {
-    return numOne > numTwo ? numOne : numTwo;
+function getFibonacci(n) {
+    return n < 2 ? n : getFibonacci(n -1) + getFibonacci(n - 2);
 }
 
-function getLargestNumberWithCallback(numOne, numTwo, callback) {
-    callback(getLargestNumber(numOne, numTwo));
+function getFibonacciWithCallback(n, callback) {
+    callback(getFibonacci(n));
 }
 
 exports.primes = getPrimes;
 exports.primesWithCallback = getPrimesWithCallback;
-exports.largestNumber = getLargestNumber;
-exports.largestNumberWithCallback = getLargestNumberWithCallback;
+exports.fibonacci = getFibonacci;
+exports.fibonacciWithCallback = getFibonacciWithCallback;
