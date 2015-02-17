@@ -31,8 +31,8 @@ Demonstrates how to create a package.json file, adds global and local modules.
 	npm install lodash -g
 	npm uninstall lodash -g
 	npm install --save lodash
-	npm install --save-exact sieve@latest
-	npm install --save-optional sax@0.1.1
+	npm install --save --save-exact sieve@latest
+	npm install --save --save-dev sax@0.1.1
 
 	node index
 
@@ -40,8 +40,9 @@ Demonstrates how to create a package.json file, adds global and local modules.
 	npm install
 	
 
-
 ## Express and Express-Generator
+
+Demonstrates the popular express framework package.
 
 	npm init
 	npm install express --save
@@ -55,4 +56,24 @@ Demonstrates how to create a package.json file, adds global and local modules.
 
 	set DEBUG=myapp & node .\bin\www
 
+## Yeoman Generator (Optional)
+
+Demonstrates the Yeoman web scaffolding package.
+
+### Web App Generator
+
+	npm install -g yo bower grunt-cli gulp
+	npm install -g generator-webapp
+
+	mkdir my-yo-project
+	cd my-yo-project
+	yo webapp
+
+### Angular Generator (Optional)
+
+	npm install -g generator-angular
+
+	mkdir my-yo-angular-project
+	cd my-yo-angular-project
+	yo angular
 

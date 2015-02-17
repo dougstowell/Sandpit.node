@@ -27,7 +27,7 @@
             </aside>
         </section>
 
-        <section data-state="bluesmith" data-transition="cube">
+        <section data-state="bluesmith">
             <h2>Agenda</h2>
             <ul>
                 <li>History Lesson</li>
@@ -40,54 +40,60 @@
         </section>
 
         <section data-state="bluesmith">
-            <h2>History Lesson</h2>
-            <h2><img src="/images/undefined-is-not-a-function.png"></h2>
-        </section>
-
-        <section data-state="bluesmith">
+            <section>
+                <h2>History Lesson</h2>
+                <p>
+                    <img src="/images/undefined-is-not-a-function.png" />
+                </p>
+                <p>
+                    <a href="http://githut.info/">git hut</a>
+                </p>
+                
+                <aside class="notes">
+                    Very telling results from Google Trends on a very popular javascript error.
+                    Nice github visualisation showing javascripts popularity.
+                </aside>
+            </section>
             <section>
                 <h2>History Lesson</h2>
                 <h3>Blur vs Oasis</h3>
                 <ul>
                     <li class="fragment">Mocha - LiveWire - LiveScript - JavaScript</li>
-                    <li class="fragment">Written in ten days by Brendan Eich</li>
-                    <li class="fragment">Pased to ECMA for standardisation (ECMAScript)</li>
-                    <li class="fragment">Microsoft muscled in on the act with IE, added JScript</li>
-                    <li class="fragment">Netscape plagued with problems</li>
-                    <li class="fragment">ECMA 3</li>
-                </ul>
-
-                <aside class="notes">
-                    Netscape Navigator 2.0 vs IE 3.0
-                    European Computer Manufacturers Association (ECMA), other implementations like ActionScript
-                </aside>
-            </section>
-
-            <section>
-                <h2>History Lesson</h2>
-                <ul>
-                    <li class="fragment">Ubiquitous / Server side</li>
-                    <li class="fragment">HTML5</li>
+                    <li class="fragment">Written by <a href="https://twitter.com/brendaneich">@BrendanEich</a> in 10 days!</li>
+                    <li class="fragment">Passed to ECMA for standardisation (ECMAScript)</li>
+                    <li class="fragment">Ubiquitous / Server side (Ajax / jQuery)</li>
                     <li class="fragment">node / npm</li>
-                    <li class="fragment">ECMA 6</li>
-                    <li class="fragment">ECMA 7</li>
                     <li class="fragment">All browsers running the same JavaScript?</li>
                 </ul>
+
+                <aside class="notes"> 
+                    Lot of good (functions, loose typing, dynamic objects)
+                    Lot of bad (typeof NaN === 'number' // true, 0 == '')
+                    Netscape Navigator 2.0 vs IE 3.0 (JScript)
+                    European Computer Manufacturers Association (ECMA), other implementations like ActionScript
+                    "Unwanted trade name that sounds like a skin disease" - Brendan Eich
+                    ECMA 6 this year, ECMA 7 next year
+                </aside>
             </section>
         </section>
 
         <!-- node slides section -->
         <section data-state="bluesmith">
             <section>
-                <h2><img src="/images/node-logo.png"></h2>
+                <h2>
+                    <a href="http://nodejs.org/">
+                        <img src="/images/node-logo.png" />
+                    </a>
+                </h2>
                 <ul>
                     <li>Uses Google's V8 JavaScript engine</li>
                     <li>Event driven, non blocking</li>
-                    <li>Created by Ryan Dahl @ Joyent for Linux in 2009</li>
+                    <li>Created by Ryan Dahl (@Joyent) for Linux in 2009</li>
                     <li>Microsoft got in on the act in 2011</li>
                     <li>Single threaded</li>
                 </ul>
                 <aside class="notes">
+                    0.12.0 at time of writing
                     Node.js operates on a single thread, using non-blocking I/O calls, allowing it to support tens of thousands of concurrent connections,
                     without worrying about the cost of context-switching between threads. The design of sharing a single-thread between all the requests
                     means it can be used to build highly concurrent applications. The design goal of a Node.js application is that any function performing I/O must use a callback.
@@ -97,7 +103,7 @@
             </section>
 
             <section>
-                <h2><img src="/images/node-logo.png"></h2>
+                <h2><img src="/images/node-logo.png" /></h2>
                 <h3>Event driven, non blocking (Argos)</h3>
                 <pre><code contenteditable>
 var result = database.query("SELECT * FROM hugetable");
@@ -112,7 +118,7 @@ console.log("Hello World");
             </section>
 
             <section>
-                <h2><img src="/images/node-logo.png"></h2>
+                <h2><img src="/images/node-logo.png" /></h2>
                 <ul>
                     <li>Walmart</li>
                     <li>Linked In</li>
@@ -123,13 +129,14 @@ console.log("Hello World");
                     <li>Github (Atom)</li>
                     <li>OW Labs...</li>
                 </ul>
-                <aside class="notes">
-                    Lack of open governance, no releases for a while - keeping on top of V8 releases.
-                </aside>
             </section>
 
             <section>
-                <h2><img src="/images/io-logo.png"></h2>
+                <h2>
+                    <a href="https://iojs.org/">
+                        <img src="/images/io-logo.png" />
+                    </a>                    
+                </h2>
                 <ul>
                     <li>Fork of node</li>
                     <li>Tired of Joyent's corporate control</li>
@@ -143,9 +150,12 @@ console.log("Hello World");
         <!-- npm slides section -->
         <section data-state="bluesmith">
             <section>
-                <h2><img src="/images/npm-logo.svg"></h2>
+                <h2>
+                    <a href="https://npmjs.com/">
+                        <img src="/images/npm-logo.svg" />
+                    </a>
+                </h2>
                 <ul>
-                    <li>https://www.npmjs.com/</li>
                     <li>Bundled with node</li>
                     <li>Command line driven</li>
                     <li>100K+ packages, 40M package downloads a day</li>
@@ -155,7 +165,7 @@ console.log("Hello World");
                 </ul>
             </section>
             <section>
-                <h2><img src="/images/npm-logo.svg"></h2>
+                <h2><img src="/images/npm-logo.svg" /></h2>
                 <pre><code contenteditable>
 npm init
 npm install express --save

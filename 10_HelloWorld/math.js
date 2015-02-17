@@ -22,7 +22,7 @@ function getPrimesWithCallback(max, callback) {
 }
 
 function getFibonacci(n) {
-    return n < 2 ? n : getFibonacci(n -1) + getFibonacci(n - 2);
+    return n < 2 ? n : getFibonacci(n - 1) + getFibonacci(n - 2);
 }
 
 function getFibonacciWithCallback(n, callback) {
